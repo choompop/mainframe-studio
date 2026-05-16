@@ -3,28 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mainframe Studio — Operating infrastructure for Main Street businesses</title>
-  <meta name="description" content="Mainframe Studio builds the operating system behind modern small businesses: websites, intake, storage, agents, dashboards, content, and workflows." />
+  <title>Mainframe Studio — Cut through the noise. Showcase the signal.</title>
+  <meta name="description" content="Mainframe Studio is the growth and communication framework for businesses: social media management, content capture, digital asset organization, marketing, advertising, CRM, and strategy support." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #050608;
-      --bg2: #090b10;
-      --panel: rgba(255,255,255,.045);
-      --panel2: rgba(255,255,255,.075);
-      --ink: #f6f3ea;
-      --muted: #a9adba;
-      --dim: #656b78;
-      --line: rgba(255,255,255,.095);
-      --blue: #5b7cfa;
-      --violet: #8b5cf6;
-      --green: #23d18b;
-      --copper: #c58b5c;
-      --danger: #ff6b6b;
-      --radius: 22px;
+      --bg2: #0a0d12;
+      --panel: rgba(255,255,255,.055);
+      --panel2: rgba(255,255,255,.085);
+      --ink: #f7f2e8;
+      --paper: #fff7e8;
+      --muted: #aeb4c2;
+      --dim: #6f7685;
+      --line: rgba(255,255,255,.105);
+      --signal: #f3b34d;
+      --blue: #6c86ff;
+      --green: #29d391;
+      --rose: #ff7a90;
       --max: 1180px;
+      --radius: 26px;
     }
 
     * { box-sizing: border-box; }
@@ -32,9 +32,9 @@
     body {
       margin: 0;
       background:
-        radial-gradient(circle at 18% 8%, rgba(91,124,250,.18), transparent 32rem),
-        radial-gradient(circle at 78% 18%, rgba(139,92,246,.14), transparent 28rem),
-        radial-gradient(circle at 50% 100%, rgba(35,209,139,.08), transparent 34rem),
+        radial-gradient(circle at 18% 0%, rgba(243,179,77,.18), transparent 30rem),
+        radial-gradient(circle at 82% 18%, rgba(108,134,255,.17), transparent 32rem),
+        radial-gradient(circle at 50% 100%, rgba(41,211,145,.09), transparent 36rem),
         var(--bg);
       color: var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
@@ -42,94 +42,87 @@
       overflow-x: hidden;
     }
 
-    .grain {
-      position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .12;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
-      mix-blend-mode: overlay;
-    }
+    .grain { position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .11; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 280' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); }
+    a { color: inherit; }
 
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(5,6,8,.86), rgba(5,6,8,.42));
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display:flex; align-items:center; gap: 11px; text-decoration:none; color: var(--ink); font-weight: 600; letter-spacing: -.02em; }
-    .mark { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 9px; display:grid; place-items:center; background: linear-gradient(135deg, rgba(91,124,250,.24), rgba(197,139,92,.10)); box-shadow: inset 0 0 18px rgba(255,255,255,.05); }
-    .mark:before { content:""; width: 12px; height: 12px; border: 1px solid var(--green); border-radius: 4px; box-shadow: 0 0 22px rgba(35,209,139,.5); }
-    .links { display:flex; align-items:center; gap: 22px; font-size: 13px; color: var(--muted); }
-    .links a { color: inherit; text-decoration: none; }
+    nav { position: fixed; inset: 0 0 auto 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,.07); background: linear-gradient(to bottom, rgba(5,6,8,.88), rgba(5,6,8,.52)); backdrop-filter: blur(18px); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 650; letter-spacing: -.03em; }
+    .mark { width: 30px; height: 30px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(135deg, rgba(243,179,77,.32), rgba(108,134,255,.14)); display:grid; place-items:center; box-shadow: inset 0 1px rgba(255,255,255,.1), 0 0 34px rgba(243,179,77,.1); }
+    .mark:before { content:""; width: 13px; height: 13px; border-radius: 4px; border: 1px solid var(--signal); box-shadow: 0 0 26px rgba(243,179,77,.58); }
+    .links { display: flex; gap: 22px; align-items: center; font-size: 13px; color: var(--muted); }
+    .links a { text-decoration: none; transition: color .2s ease; }
     .links a:hover { color: var(--ink); }
-    .cta { color: white !important; background: linear-gradient(135deg, var(--blue), var(--violet)); padding: 9px 13px; border-radius: 999px; box-shadow: 0 12px 35px rgba(91,124,250,.22); }
+    .nav-cta { color: #120d05 !important; background: var(--signal); padding: 9px 14px; border-radius: 999px; font-weight: 650; box-shadow: 0 14px 40px rgba(243,179,77,.22); }
 
-    section { position: relative; }
     .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
-    .hero { min-height: 100vh; display:grid; align-items:center; padding: 120px 0 80px; }
-    .hero-grid { display:grid; grid-template-columns: 1.02fr .98fr; gap: 56px; align-items:center; }
-    .eyebrow { font-family: 'JetBrains Mono', monospace; color: var(--green); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
-    h1 { font-size: clamp(48px, 8vw, 94px); line-height: .92; letter-spacing: -.07em; margin: 0 0 24px; font-weight: 560; }
-    .lead { color: #c7c9d1; font-size: clamp(18px, 2vw, 23px); line-height: 1.55; max-width: 680px; margin: 0 0 34px; }
-    .hero-actions { display:flex; gap: 12px; flex-wrap: wrap; }
-    .button { display:inline-flex; align-items:center; gap: 10px; min-height: 44px; padding: 12px 16px; border-radius: 999px; text-decoration:none; color: var(--ink); border:1px solid var(--line); background: rgba(255,255,255,.045); font-weight: 500; font-size: 14px; }
-    .button.primary { background: linear-gradient(135deg, var(--blue), var(--violet)); border-color: rgba(255,255,255,.18); color: white; }
+    .hero { min-height: 100vh; display: grid; align-items: center; padding: 124px 0 82px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; color: var(--signal); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 20px; }
+    h1 { font-size: clamp(50px, 8vw, 96px); line-height: .91; letter-spacing: -.075em; margin: 0 0 26px; font-weight: 650; max-width: 820px; }
+    .lead { color: #cfd3dc; font-size: clamp(18px, 2vw, 23px); line-height: 1.55; max-width: 720px; margin: 0 0 34px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 12px 17px; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: 14px; background: rgba(255,255,255,.055); }
+    .button.primary { background: var(--paper); color: #090a0d; border-color: rgba(255,255,255,.4); }
 
-    .frame-visual { min-height: 560px; position: relative; perspective: 1100px; }
-    .orbital { position:absolute; inset: 8%; border: 1px solid rgba(255,255,255,.08); border-radius: 38px; transform: rotateX(58deg) rotateZ(-38deg); background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); box-shadow: inset 0 0 60px rgba(91,124,250,.06), 0 60px 100px rgba(0,0,0,.44); }
-    .node { position:absolute; border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: rgba(12,14,20,.78); backdrop-filter: blur(16px); box-shadow: 0 24px 70px rgba(0,0,0,.38); }
-    .node strong { display:block; font-size: 13px; margin-bottom: 6px; }
-    .node span { color: var(--muted); font-size: 12px; line-height: 1.45; }
-    .n1 { top: 6%; left: 3%; width: 180px; }
-    .n2 { top: 26%; right: 0; width: 205px; }
-    .n3 { bottom: 18%; left: 0; width: 195px; }
-    .n4 { bottom: 2%; right: 12%; width: 185px; }
-    .core { position:absolute; top: 41%; left: 42%; width: 160px; height: 160px; transform: translate(-50%,-50%); border-radius: 40px; border: 1px solid rgba(255,255,255,.14); background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.16), transparent 38%), linear-gradient(135deg, rgba(91,124,250,.32), rgba(35,209,139,.08)); display:grid; place-items:center; box-shadow: 0 0 80px rgba(91,124,250,.22), inset 0 0 60px rgba(255,255,255,.04); }
-    .core div { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink); text-align:center; }
+    .signal-card { position: relative; min-height: 610px; perspective: 1200px; }
+    .studio-frame { position: absolute; inset: 3% 2% 2% 6%; border: 1px solid rgba(255,255,255,.1); border-radius: 40px; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.02)); transform: rotateX(54deg) rotateZ(-36deg); box-shadow: inset 0 1px rgba(255,255,255,.08), 0 70px 140px rgba(0,0,0,.44); }
+    .signal-line { position: absolute; left: 12%; right: 8%; top: 50%; height: 2px; background: linear-gradient(90deg, transparent, rgba(243,179,77,.2), var(--signal), rgba(41,211,145,.45), transparent); box-shadow: 0 0 42px rgba(243,179,77,.28); }
+    .node { position: absolute; border: 1px solid var(--line); background: rgba(10,13,18,.82); backdrop-filter: blur(16px); border-radius: 20px; padding: 15px; width: 205px; box-shadow: 0 28px 80px rgba(0,0,0,.42); }
+    .node strong { display:block; font-size: 13px; margin-bottom: 7px; }
+    .node span { display:block; color: var(--muted); font-size: 12px; line-height: 1.45; }
+    .n1 { top: 3%; left: 0; } .n2 { top: 23%; right: 0; } .n3 { bottom: 24%; left: 2%; } .n4 { bottom: 2%; right: 10%; }
+    .core { position: absolute; left: 45%; top: 44%; width: 170px; height: 170px; transform: translate(-50%,-50%); border: 1px solid rgba(255,255,255,.16); border-radius: 44px; background: radial-gradient(circle at 35% 26%, rgba(255,255,255,.18), transparent 38%), linear-gradient(135deg, rgba(243,179,77,.30), rgba(108,134,255,.16)); display:grid; place-items:center; box-shadow: 0 0 100px rgba(243,179,77,.2), inset 0 1px rgba(255,255,255,.1); }
+    .core div { font-family:'JetBrains Mono', monospace; font-size: 12px; text-align:center; letter-spacing:.08em; color:white; }
 
-    .deep-scroll { background: linear-gradient(180deg, transparent, #030407 10%, #030407 88%, transparent); padding: 100px 0; }
-    .sticky-stage { display:grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items:start; }
-    .sticky-copy { position: sticky; top: 118px; padding-bottom: 80px; }
-    .kicker { color: var(--copper); font-family:'JetBrains Mono', monospace; text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
-    h2 { font-size: clamp(34px, 5vw, 64px); line-height: .98; letter-spacing: -.055em; margin: 14px 0 18px; font-weight: 540; }
-    .muted { color: var(--muted); line-height: 1.65; font-size: 17px; }
-    .layers { display:grid; gap: 28px; }
-    .layer { min-height: 360px; border:1px solid var(--line); border-radius: var(--radius); padding: 26px; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); box-shadow: inset 0 1px rgba(255,255,255,.08), 0 35px 90px rgba(0,0,0,.34); }
-    .layer .num { font-family:'JetBrains Mono', monospace; color: var(--green); font-size: 12px; }
-    .layer h3 { margin: 16px 0 10px; font-size: 28px; letter-spacing: -.035em; }
-    .diagram { margin-top: 24px; display:grid; gap: 10px; font-family:'JetBrains Mono', monospace; font-size: 12px; color: #d7d9df; }
-    .pipe { border:1px solid rgba(255,255,255,.09); background: rgba(0,0,0,.24); border-radius: 12px; padding: 13px; display:flex; justify-content:space-between; gap: 16px; }
-    .pipe b { color: var(--ink); font-weight: 500; }
-    .pipe em { color: var(--dim); font-style: normal; }
+    .section { padding: 104px 0; }
+    .section.alt { background: linear-gradient(180deg, transparent, rgba(255,255,255,.028), transparent); border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); }
+    .kicker { font-family:'JetBrains Mono', monospace; color: var(--signal); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { font-size: clamp(35px, 5.4vw, 66px); line-height: .98; letter-spacing: -.06em; margin: 14px 0 18px; font-weight: 640; max-width: 900px; }
+    .muted { color: var(--muted); line-height: 1.68; font-size: 17px; max-width: 760px; }
 
-    .brand-board { padding: 120px 0; }
-    .palette { display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 34px; }
-    .swatch { min-height: 180px; border-radius: 20px; padding: 16px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid rgba(255,255,255,.1); box-shadow: inset 0 1px rgba(255,255,255,.09); }
-    .swatch code { font-family:'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,.72); }
-    .swatch span { font-weight: 560; letter-spacing: -.02em; }
-    .s1 { background:#050608; } .s2 { background:#f6f3ea; color:#08090a; } .s2 code { color: rgba(0,0,0,.6); } .s3 { background:#5b7cfa; } .s4 { background:#23d18b; color:#04100b; } .s4 code { color: rgba(0,0,0,.58); } .s5 { background:#c58b5c; color:#150c06; } .s5 code { color: rgba(0,0,0,.58); }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+    .problem, .service, .proof { border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.045); padding: 24px; box-shadow: inset 0 1px rgba(255,255,255,.07); }
+    .problem h3, .service h3, .proof h3 { margin: 0 0 10px; font-size: 22px; letter-spacing: -.035em; }
+    .problem p, .service p, .proof p { margin: 0; color: var(--muted); line-height: 1.58; }
+    .problem b { color: var(--rose); font-weight: 650; }
 
-    .offer { padding: 80px 0 130px; }
-    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
-    .card { border:1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.045); padding: 24px; min-height: 250px; }
-    .card h3 { margin: 0 0 12px; font-size: 22px; letter-spacing: -.03em; }
-    .card p { color: var(--muted); line-height: 1.55; margin: 0; }
-    .card ul { margin: 18px 0 0; padding-left: 18px; color: #d0d3dc; line-height: 1.8; }
+    .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
+    .service { min-height: 210px; }
+    .service small { display:block; color: var(--signal); font-family:'JetBrains Mono', monospace; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
+    .service ul { margin: 18px 0 0; padding-left: 18px; color: #d8dbe2; line-height: 1.82; }
 
-    footer { border-top:1px solid var(--line); padding: 40px 0; color: var(--dim); font-size: 13px; }
+    .flow { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; margin-top: 38px; align-items: start; }
+    .steps { display: grid; gap: 12px; }
+    .step { display:flex; gap:14px; align-items:flex-start; padding: 16px; border:1px solid var(--line); border-radius:18px; background:rgba(0,0,0,.2); }
+    .num { flex:0 0 auto; width:32px; height:32px; display:grid; place-items:center; border-radius:10px; background:var(--paper); color:#090a0d; font-weight:750; font-size:13px; }
+    .step strong { display:block; margin-bottom:5px; }
+    .step span { color: var(--muted); line-height:1.5; font-size:14px; }
+
+    .quote { border: 1px solid rgba(243,179,77,.28); border-radius: 32px; background: linear-gradient(135deg, rgba(243,179,77,.13), rgba(255,255,255,.035)); padding: clamp(28px, 5vw, 54px); margin-top: 34px; }
+    .quote p { margin:0; font-size: clamp(26px, 4vw, 48px); line-height:1.05; letter-spacing:-.055em; max-width:940px; }
+
+    .offer-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:36px; }
+    .proof { min-height: 240px; }
+    .proof .tag { display:inline-flex; border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:6px 9px; color:#dfe2e9; font-size:12px; margin-bottom:18px; background:rgba(0,0,0,.16); }
+
+    footer { border-top:1px solid var(--line); padding:40px 0; color:var(--dim); font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; }
 
     @media (max-width: 900px) {
-      .links a:not(.cta) { display:none; }
-      .hero-grid, .sticky-stage { grid-template-columns: 1fr; }
-      .frame-visual { min-height: 460px; }
-      .sticky-copy { position: relative; top: 0; }
-      .palette, .cards { grid-template-columns: 1fr; }
-      .swatch { min-height: 120px; }
+      .links a:not(.nav-cta) { display:none; }
+      .hero-grid, .flow { grid-template-columns: 1fr; }
+      .signal-card { min-height: 500px; }
+      .problem-grid, .services, .offer-grid { grid-template-columns: 1fr; }
+      .node { width: 180px; }
+      .n2 { right: 2%; } .n4 { right: 4%; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      .node { animation: float 7s ease-in-out infinite; }
-      .n2 { animation-delay: -1.5s; } .n3 { animation-delay: -3s; } .n4 { animation-delay: -4.5s; }
-      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+      .node { animation: float 7.5s ease-in-out infinite; }
+      .n2 { animation-delay:-1.7s; } .n3 { animation-delay:-3.3s; } .n4 { animation-delay:-5s; }
+      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-13px); } }
     }
   </style>
 </head>
@@ -139,10 +132,11 @@
     <div class="nav-inner">
       <a class="brand" href="#top"><span class="mark"></span><span>Mainframe Studio</span></a>
       <div class="links">
+        <a href="#problem">Problem</a>
+        <a href="#services">Services</a>
         <a href="#system">System</a>
-        <a href="#brand">Brand</a>
         <a href="#offer">Offer</a>
-        <a class="cta" href="#offer">Build the frame</a>
+        <a class="nav-cta" href="mailto:john@mainframestud.io?subject=Mainframe%20Studio%20intake">Start with signal</a>
       </div>
     </div>
   </nav>
@@ -151,100 +145,89 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Operating infrastructure for Main Street businesses</div>
-          <h1>We build the frame your business runs on.</h1>
-          <p class="lead">Mainframe Studio connects the public face of a business — website, content, phone, lead flow — to the internal machine: storage, Slack, agents, calendars, dashboards, finance workflows, and human operators.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#system">Travel the infrastructure</a>
-            <a class="button" href="#brand">View brand system</a>
+          <div class="eyebrow">The frame you show the world</div>
+          <h1>Cut through the noise. Showcase the signal.</h1>
+          <p class="lead">Mainframe Studio gives businesses a clearer public voice and a cleaner internal workflow — social media, content capture, digital assets, marketing, advertising, CRM, and client communication tied into one operating system.</p>
+          <div class="actions">
+            <a class="button primary" href="#services">What Mainframe does</a>
+            <a class="button" href="#problem">Why it exists</a>
           </div>
         </div>
-        <div class="frame-visual" aria-label="Abstract infrastructure model">
-          <div class="orbital"></div>
-          <div class="core"><div>MAINFRAME<br/>CLIENT OS</div></div>
-          <div class="node n1"><strong>External Frame</strong><span>Website, domain, content, social proof, forms, phone.</span></div>
-          <div class="node n2"><strong>Storage Layer</strong><span>Google Drive, asset taxonomy, source files, approvals.</span></div>
-          <div class="node n3"><strong>Agent Layer</strong><span>Hermes brain, Slack routing, tasks, summaries, workflows.</span></div>
-          <div class="node n4"><strong>Control Layer</strong><span>Dashboard, calendar, reporting, finance visibility.</span></div>
+
+        <div class="signal-card" aria-label="Mainframe Studio signal system">
+          <div class="studio-frame"></div>
+          <div class="signal-line"></div>
+          <div class="core"><div>MAINFRAME<br/>SIGNAL SYSTEM</div></div>
+          <div class="node n1"><strong>Content Capture</strong><span>Photos, video, voice, offers, proof, raw material.</span></div>
+          <div class="node n2"><strong>Asset Library</strong><span>Organized files your team can actually find and use.</span></div>
+          <div class="node n3"><strong>Human Voice</strong><span>Strategy, captions, correspondence, tone, trust.</span></div>
+          <div class="node n4"><strong>Growth Loop</strong><span>Social, ads, CRM, intake, reporting, follow-up.</span></div>
         </div>
       </div>
     </section>
 
-    <section id="system" class="deep-scroll">
-      <div class="wrap sticky-stage">
-        <div class="sticky-copy">
-          <div class="kicker">Scroll through the machine</div>
-          <h2>The website is the frame. The infrastructure is the business.</h2>
-          <p class="muted">The site should teach the client how their own business works. As they scroll, they move from the beautiful public surface into deeper layers: intake, storage, agents, operators, financial control, and reporting.</p>
-        </div>
-        <div class="layers">
-          <article class="layer">
-            <div class="num">LAYER 01</div>
-            <h3>The public frame</h3>
-            <p class="muted">A polished website that makes the business legible: what you sell, how to book, where to go, what to trust, what happens next.</p>
-            <div class="diagram"><div class="pipe"><b>Domain + site</b><em>mainframestud.io</em></div><div class="pipe"><b>Forms + phone</b><em>lead capture</em></div><div class="pipe"><b>Social content</b><em>proof + distribution</em></div></div>
-          </article>
-          <article class="layer">
-            <div class="num">LAYER 02</div>
-            <h3>The storage system</h3>
-            <p class="muted">Content, docs, menus, contracts, clips, analytics, and approvals live in a clean Google Drive structure that both people and agents can understand.</p>
-            <div class="diagram"><div class="pipe"><b>Capture</b><em>photos / video / calls</em></div><div class="pipe"><b>Name + tag</b><em>usable assets</em></div><div class="pipe"><b>Retrieve</b><em>editor-ready library</em></div></div>
-          </article>
-          <article class="layer">
-            <div class="num">LAYER 03</div>
-            <h3>The agent brain</h3>
-            <p class="muted">Hermes turns calls, Slack messages, files, and client goals into tasks, drafts, reminders, summaries, and operating memory — with approval boundaries.</p>
-            <div class="diagram"><div class="pipe"><b>Slack</b><em>team interface</em></div><div class="pipe"><b>Hermes</b><em>reasoning + action</em></div><div class="pipe"><b>Dashboard</b><em>visibility + control</em></div></div>
-          </article>
-          <article class="layer">
-            <div class="num">LAYER 04</div>
-            <h3>The operating loop</h3>
-            <p class="muted">Leads become appointments. Content becomes posts. Calls become SOPs. Expenses become visibility. The business stops living in the owner’s head.</p>
-            <div class="diagram"><div class="pipe"><b>Lead</b><em>captured</em></div><div class="pipe"><b>Task</b><em>assigned</em></div><div class="pipe"><b>Report</b><em>learned</em></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="brand" class="brand-board">
+    <section id="problem" class="section alt">
       <div class="wrap">
-        <div class="kicker">Brand system</div>
-        <h2>Deep tech, warm business, social enough to feel alive.</h2>
-        <p class="muted">The palette should not look like a generic AI startup. It should feel like a dark infrastructure room with warm human material inside it.</p>
-        <div class="palette">
-          <div class="swatch s1"><span>Obsidian Mainframe</span><code>#050608</code></div>
-          <div class="swatch s2"><span>Paper Ivory</span><code>#F6F3EA</code></div>
-          <div class="swatch s3"><span>System Blue</span><code>#5B7CFA</code></div>
-          <div class="swatch s4"><span>Live Signal</span><code>#23D18B</code></div>
-          <div class="swatch s5"><span>Human Copper</span><code>#C58B5C</code></div>
+        <div class="kicker">Why Mainframe exists</div>
+        <h2>Most social media help stops exactly where the real business starts.</h2>
+        <p class="muted">The problem usually is not just “we need more posts.” The problem is that the person posting does not understand the business, the client correspondence, the daily operations, or the strategy underneath the brand.</p>
+        <div class="problem-grid">
+          <article class="problem"><h3><b>Unresponsive</b> partners</h3><p>You should not have to chase the person responsible for making your business look alive.</p></article>
+          <article class="problem"><h3>Content with no context</h3><p>Pretty posts do not help if they miss the offer, the customer, the margin, or the actual business problem.</p></article>
+          <article class="problem"><h3>No operational follow-through</h3><p>Leads, DMs, emails, files, calendars, and decisions need a system — not another disconnected vendor.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="offer" class="offer">
+    <section id="services" class="section">
       <div class="wrap">
-        <div class="kicker">How it sells</div>
-        <h2>Install once. Operate monthly.</h2>
-        <p class="muted">The clean business model is a foundation setup fee, then recurring operating tiers.</p>
-        <div class="cards">
-          <div class="card"><h3>Foundation Setup</h3><p>Domain, website, phone, Drive, Slack, calendar, dashboard, agent brain, intake flows, permissions.</p><ul><li>Paid in advance</li><li>Clear scope</li><li>Client isolated</li></ul></div>
-          <div class="card"><h3>Growth Operations</h3><p>Social media, content creation, editing, ads, SEO, lead follow-up, campaign reporting.</p><ul><li>Monthly retainer</li><li>Content library</li><li>Approval gates</li></ul></div>
-          <div class="card"><h3>Control Layer</h3><p>Bookkeeping visibility, calls converted to SOPs, financial workflows, strategy uploaded into the brain.</p><ul><li>Powered by Cain Union</li><li>Cashflow clarity</li><li>Owner less central</li></ul></div>
+        <div class="kicker">What Mainframe does</div>
+        <h2>A growth studio built like an operating system.</h2>
+        <p class="muted">Mainframe is not just a posting service. It is the public-facing frame for your business, backed by the systems required to make communication, content, and follow-up easier.</p>
+        <div class="services">
+          <article class="service"><small>01 / Social</small><h3>Social media management with a real business voice</h3><p>We help your business sound like itself: human, specific, timely, and connected to what is actually happening.</p><ul><li>content calendars</li><li>caption strategy</li><li>community/client correspondence support</li></ul></article>
+          <article class="service"><small>02 / Assets</small><h3>Digital asset organization</h3><p>Your photos, menus, videos, logos, offers, and source files become a usable library instead of a buried folder.</p><ul><li>Drive structure</li><li>naming and tagging</li><li>approved-use libraries</li></ul></article>
+          <article class="service"><small>03 / Capture</small><h3>Content capture and campaign material</h3><p>We turn real business activity into usable raw material for websites, ads, social, email, and sales follow-up.</p><ul><li>shot lists</li><li>photo/video priorities</li><li>offer and proof capture</li></ul></article>
+          <article class="service"><small>04 / Growth</small><h3>Marketing, advertising, CRM, and follow-up</h3><p>The front-end message connects to intake and follow-up, so attention has somewhere to go.</p><ul><li>landing pages</li><li>ad/message testing</li><li>CRM and lead routing</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="system" class="section alt">
+      <div class="wrap">
+        <div class="kicker">How it works</div>
+        <h2>Strategy first. Content second. Automation where it makes life easier.</h2>
+        <div class="flow">
+          <p class="muted">Mainframe sits inside a broader Bel Air Intel operating system when a client needs it: clearer communication, organized assets, CRM visibility, internal handoffs, dashboards, and agent-assisted workflows. The goal is simple: make the business easier to run and easier to understand from the outside.</p>
+          <div class="steps">
+            <div class="step"><div class="num">1</div><div><strong>Find the signal</strong><span>Clarify the offer, customer, voice, proof, and business priorities.</span></div></div>
+            <div class="step"><div class="num">2</div><div><strong>Build the frame</strong><span>Website, social, assets, CRM, and communication surfaces start lining up.</span></div></div>
+            <div class="step"><div class="num">3</div><div><strong>Run the loop</strong><span>Capture, publish, respond, learn, and improve without making the owner chase every detail.</span></div></div>
+            <div class="step"><div class="num">4</div><div><strong>Automate carefully</strong><span>Use technology for organization, reminders, routing, drafting, and reporting — not to erase the human voice.</span></div></div>
+          </div>
+        </div>
+        <div class="quote"><p>“The frame your business shows the world — connected to the system that helps it grow.”</p></div>
+      </div>
+    </section>
+
+    <section id="offer" class="section">
+      <div class="wrap">
+        <div class="kicker">Simple starting points</div>
+        <h2>Start with the part of the business that is loudest, messiest, or most valuable.</h2>
+        <div class="offer-grid">
+          <article class="proof"><span class="tag">Starter</span><h3>Signal Audit</h3><p>We review your public presence, content library, customer path, and communication gaps. You leave with a practical punch list.</p></article>
+          <article class="proof"><span class="tag">Build</span><h3>Content + Asset System</h3><p>We organize the raw materials and build the publishing rhythm: social, site sections, offers, proof, and approval flow.</p></article>
+          <article class="proof"><span class="tag">Operate</span><h3>Growth Framework</h3><p>We connect content, CRM, ads, client correspondence, reporting, and strategy into a repeatable operating loop.</p></article>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">Mainframe Studio — powered by Bel Air Intel systems and Cain Union financial controls.</div>
+    <div class="wrap footer-inner">
+      <div>Mainframe Studio — cutting through the noise and showcasing the signal.</div>
+      <div>Integrated with Bel Air Intel operating infrastructure.</div>
+    </div>
   </footer>
-
-  <script>
-    const visual = document.querySelector('.frame-visual');
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY || 0;
-      if (visual) visual.style.transform = `translateY(${Math.min(y * .025, 18)}px)`;
-    }, { passive: true });
-  </script>
 </body>
 </html>
