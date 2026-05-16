@@ -3,140 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mainframe Studio — Cut through the noise. Showcase the signal.</title>
-  <meta name="description" content="Mainframe Studio is the growth and communication framework for businesses: social media management, content capture, digital asset organization, marketing, advertising, CRM, and strategy support." />
+  <title>Mainframe Studio — Showcase the signal</title>
+  <meta name="description" content="Mainframe Studio helps businesses look sharper, respond faster, and turn content, clients, assets, CRM, and follow-up into one growth system." />
+  <meta property="og:title" content="Mainframe Studio — Showcase the signal" />
+  <meta property="og:description" content="A dynamic growth studio for social media, content capture, digital assets, CRM, client correspondence, and strategy." />
+  <meta name="theme-color" content="#08090d" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050608;
-      --bg2: #0a0d12;
-      --panel: rgba(255,255,255,.055);
-      --panel2: rgba(255,255,255,.085);
-      --ink: #f7f2e8;
-      --paper: #fff7e8;
-      --muted: #aeb4c2;
-      --dim: #6f7685;
-      --line: rgba(255,255,255,.105);
-      --signal: #f3b34d;
-      --blue: #6c86ff;
-      --green: #29d391;
-      --rose: #ff7a90;
+      --bg: #06070a;
+      --bg-2: #0c1018;
+      --ink: #fff8ea;
+      --soft: #cfd3dd;
+      --muted: #8f98aa;
+      --dim: #596173;
+      --line: rgba(255,255,255,.12);
+      --panel: rgba(255,255,255,.07);
+      --panel-2: rgba(255,255,255,.11);
+      --gold: #ffbd55;
+      --hot: #ff4f88;
+      --cyan: #58e7ff;
+      --lime: #72f2a1;
+      --violet: #9a7cff;
+      --paper: #fff3d6;
       --max: 1180px;
-      --radius: 26px;
+      --radius: 28px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 18% 0%, rgba(243,179,77,.18), transparent 30rem),
-        radial-gradient(circle at 82% 18%, rgba(108,134,255,.17), transparent 32rem),
-        radial-gradient(circle at 50% 100%, rgba(41,211,145,.09), transparent 36rem),
-        var(--bg);
       color: var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
-      font-feature-settings: "cv01", "ss03";
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255,189,85,.22), transparent 30rem),
+        radial-gradient(circle at 88% 6%, rgba(88,231,255,.18), transparent 30rem),
+        radial-gradient(circle at 70% 78%, rgba(255,79,136,.13), transparent 34rem),
+        linear-gradient(180deg, #06070a 0%, #070912 44%, #050608 100%);
       overflow-x: hidden;
     }
 
-    .grain { position: fixed; inset: 0; pointer-events: none; z-index: 60; opacity: .11; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 280' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E"); }
-    a { color: inherit; }
-
-    nav { position: fixed; inset: 0 0 auto 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,.07); background: linear-gradient(to bottom, rgba(5,6,8,.88), rgba(5,6,8,.52)); backdrop-filter: blur(18px); }
-    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 650; letter-spacing: -.03em; }
-    .mark { width: 30px; height: 30px; border-radius: 10px; border: 1px solid rgba(255,255,255,.14); background: linear-gradient(135deg, rgba(243,179,77,.32), rgba(108,134,255,.14)); display:grid; place-items:center; box-shadow: inset 0 1px rgba(255,255,255,.1), 0 0 34px rgba(243,179,77,.1); }
-    .mark:before { content:""; width: 13px; height: 13px; border-radius: 4px; border: 1px solid var(--signal); box-shadow: 0 0 26px rgba(243,179,77,.58); }
-    .links { display: flex; gap: 22px; align-items: center; font-size: 13px; color: var(--muted); }
-    .links a { text-decoration: none; transition: color .2s ease; }
-    .links a:hover { color: var(--ink); }
-    .nav-cta { color: #120d05 !important; background: var(--signal); padding: 9px 14px; border-radius: 999px; font-weight: 650; box-shadow: 0 14px 40px rgba(243,179,77,.22); }
-
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
-    .hero { min-height: 100vh; display: grid; align-items: center; padding: 124px 0 82px; }
-    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
-    .eyebrow { font-family: 'JetBrains Mono', monospace; color: var(--signal); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 20px; }
-    h1 { font-size: clamp(50px, 8vw, 96px); line-height: .91; letter-spacing: -.075em; margin: 0 0 26px; font-weight: 650; max-width: 820px; }
-    .lead { color: #cfd3dc; font-size: clamp(18px, 2vw, 23px); line-height: 1.55; max-width: 720px; margin: 0 0 34px; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .button { min-height: 46px; display: inline-flex; align-items: center; justify-content: center; padding: 12px 17px; border-radius: 999px; border: 1px solid var(--line); text-decoration: none; font-weight: 600; font-size: 14px; background: rgba(255,255,255,.055); }
-    .button.primary { background: var(--paper); color: #090a0d; border-color: rgba(255,255,255,.4); }
-
-    .signal-card { position: relative; min-height: 610px; perspective: 1200px; }
-    .studio-frame { position: absolute; inset: 3% 2% 2% 6%; border: 1px solid rgba(255,255,255,.1); border-radius: 40px; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.02)); transform: rotateX(54deg) rotateZ(-36deg); box-shadow: inset 0 1px rgba(255,255,255,.08), 0 70px 140px rgba(0,0,0,.44); }
-    .signal-line { position: absolute; left: 12%; right: 8%; top: 50%; height: 2px; background: linear-gradient(90deg, transparent, rgba(243,179,77,.2), var(--signal), rgba(41,211,145,.45), transparent); box-shadow: 0 0 42px rgba(243,179,77,.28); }
-    .node { position: absolute; border: 1px solid var(--line); background: rgba(10,13,18,.82); backdrop-filter: blur(16px); border-radius: 20px; padding: 15px; width: 205px; box-shadow: 0 28px 80px rgba(0,0,0,.42); }
-    .node strong { display:block; font-size: 13px; margin-bottom: 7px; }
-    .node span { display:block; color: var(--muted); font-size: 12px; line-height: 1.45; }
-    .n1 { top: 3%; left: 0; } .n2 { top: 23%; right: 0; } .n3 { bottom: 24%; left: 2%; } .n4 { bottom: 2%; right: 10%; }
-    .core { position: absolute; left: 45%; top: 44%; width: 170px; height: 170px; transform: translate(-50%,-50%); border: 1px solid rgba(255,255,255,.16); border-radius: 44px; background: radial-gradient(circle at 35% 26%, rgba(255,255,255,.18), transparent 38%), linear-gradient(135deg, rgba(243,179,77,.30), rgba(108,134,255,.16)); display:grid; place-items:center; box-shadow: 0 0 100px rgba(243,179,77,.2), inset 0 1px rgba(255,255,255,.1); }
-    .core div { font-family:'JetBrains Mono', monospace; font-size: 12px; text-align:center; letter-spacing:.08em; color:white; }
-
-    .section { padding: 104px 0; }
-    .section.alt { background: linear-gradient(180deg, transparent, rgba(255,255,255,.028), transparent); border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); }
-    .kicker { font-family:'JetBrains Mono', monospace; color: var(--signal); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
-    h2 { font-size: clamp(35px, 5.4vw, 66px); line-height: .98; letter-spacing: -.06em; margin: 14px 0 18px; font-weight: 640; max-width: 900px; }
-    .muted { color: var(--muted); line-height: 1.68; font-size: 17px; max-width: 760px; }
-
-    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
-    .problem, .service, .proof { border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.045); padding: 24px; box-shadow: inset 0 1px rgba(255,255,255,.07); }
-    .problem h3, .service h3, .proof h3 { margin: 0 0 10px; font-size: 22px; letter-spacing: -.035em; }
-    .problem p, .service p, .proof p { margin: 0; color: var(--muted); line-height: 1.58; }
-    .problem b { color: var(--rose); font-weight: 650; }
-
-    .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 36px; }
-    .service { min-height: 210px; }
-    .service small { display:block; color: var(--signal); font-family:'JetBrains Mono', monospace; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px; }
-    .service ul { margin: 18px 0 0; padding-left: 18px; color: #d8dbe2; line-height: 1.82; }
-
-    .flow { display: grid; grid-template-columns: .9fr 1.1fr; gap: 44px; margin-top: 38px; align-items: start; }
-    .steps { display: grid; gap: 12px; }
-    .step { display:flex; gap:14px; align-items:flex-start; padding: 16px; border:1px solid var(--line); border-radius:18px; background:rgba(0,0,0,.2); }
-    .num { flex:0 0 auto; width:32px; height:32px; display:grid; place-items:center; border-radius:10px; background:var(--paper); color:#090a0d; font-weight:750; font-size:13px; }
-    .step strong { display:block; margin-bottom:5px; }
-    .step span { color: var(--muted); line-height:1.5; font-size:14px; }
-
-    .quote { border: 1px solid rgba(243,179,77,.28); border-radius: 32px; background: linear-gradient(135deg, rgba(243,179,77,.13), rgba(255,255,255,.035)); padding: clamp(28px, 5vw, 54px); margin-top: 34px; }
-    .quote p { margin:0; font-size: clamp(26px, 4vw, 48px); line-height:1.05; letter-spacing:-.055em; max-width:940px; }
-
-    .offer-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; margin-top:36px; }
-    .proof { min-height: 240px; }
-    .proof .tag { display:inline-flex; border:1px solid rgba(255,255,255,.12); border-radius:999px; padding:6px 9px; color:#dfe2e9; font-size:12px; margin-bottom:18px; background:rgba(0,0,0,.16); }
-
-    footer { border-top:1px solid var(--line); padding:40px 0; color:var(--dim); font-size:13px; }
-    .footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; }
-
-    @media (max-width: 900px) {
-      .links a:not(.nav-cta) { display:none; }
-      .hero-grid, .flow { grid-template-columns: 1fr; }
-      .signal-card { min-height: 500px; }
-      .problem-grid, .services, .offer-grid { grid-template-columns: 1fr; }
-      .node { width: 180px; }
-      .n2 { right: 2%; } .n4 { right: 4%; }
-      .footer-inner { flex-direction:column; align-items:flex-start; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 72%);
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-      .node { animation: float 7.5s ease-in-out infinite; }
-      .n2 { animation-delay:-1.7s; } .n3 { animation-delay:-3.3s; } .n4 { animation-delay:-5s; }
-      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-13px); } }
+    .grain { position: fixed; inset: 0; pointer-events:none; z-index: 80; opacity: .11; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 280' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.74' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); }
+    .spotlight { position: fixed; inset: auto auto 0 0; width: 420px; height: 420px; border-radius: 999px; pointer-events:none; z-index: 1; transform: translate(calc(var(--x, 50vw) - 210px), calc(var(--y, 50vh) - 210px)); background: radial-gradient(circle, rgba(255,189,85,.12), transparent 62%); filter: blur(4px); transition: transform .12s linear; }
+
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; position: relative; z-index: 2; }
+
+    nav { position: fixed; inset: 0 0 auto; z-index: 70; border-bottom: 1px solid rgba(255,255,255,.08); background: linear-gradient(to bottom, rgba(6,7,10,.86), rgba(6,7,10,.54)); backdrop-filter: blur(20px); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 15px 22px; display:flex; justify-content:space-between; align-items:center; gap: 18px; }
+    .brand { display:flex; gap: 12px; align-items:center; text-decoration:none; font-weight: 800; letter-spacing: -.04em; }
+    .mark { width: 32px; height: 32px; border-radius: 11px; position: relative; border:1px solid rgba(255,255,255,.16); background: conic-gradient(from 140deg, var(--gold), var(--hot), var(--cyan), var(--gold)); box-shadow: 0 0 36px rgba(255,189,85,.2); }
+    .mark::after { content:""; position:absolute; inset: 7px; border-radius: 6px; background:#07080d; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+    .links { display:flex; align-items:center; gap: 20px; font-size: 13px; color: var(--soft); }
+    .links a { text-decoration:none; transition: color .2s ease, transform .2s ease; }
+    .links a:hover { color: var(--ink); transform: translateY(-1px); }
+    .nav-cta { color:#130d05 !important; background: var(--paper); padding: 9px 14px; border-radius: 999px; font-weight: 800; box-shadow: 0 16px 45px rgba(255,189,85,.2); }
+
+    .hero { min-height: 100vh; display:grid; align-items:center; padding: 132px 0 80px; }
+    .hero-grid { display:grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .82fr); gap: 50px; align-items:center; }
+    .eyebrow { font-family:'JetBrains Mono', monospace; color: var(--gold); font-size: 12px; letter-spacing: .18em; text-transform:uppercase; margin-bottom: 18px; }
+    h1 { font-size: clamp(56px, 9vw, 116px); line-height: .86; letter-spacing: -.085em; margin: 0 0 26px; font-weight: 800; text-wrap: balance; }
+    .gradient-text { background: linear-gradient(100deg, #fff8ea 0%, #ffbd55 35%, #58e7ff 72%, #fff8ea 100%); -webkit-background-clip:text; color: transparent; background-size: 200% auto; animation: shine 8s ease-in-out infinite; }
+    .lead { color: #d7dbe5; font-size: clamp(18px, 2vw, 23px); line-height: 1.55; max-width: 740px; margin: 0 0 34px; }
+    .actions { display:flex; gap: 12px; flex-wrap:wrap; }
+    .button { min-height: 48px; display:inline-flex; align-items:center; justify-content:center; gap: 10px; padding: 13px 18px; border:1px solid var(--line); border-radius:999px; text-decoration:none; font-weight: 800; font-size: 14px; background: rgba(255,255,255,.06); transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.24); }
+    .button.primary { color:#130d05; background: linear-gradient(135deg, #fff3d6, #ffbd55); border-color: rgba(255,255,255,.35); box-shadow: 0 20px 55px rgba(255,189,85,.22); }
+
+    .hero-machine { min-height: 630px; position:relative; perspective: 1100px; }
+    .phone, .dashboard, .signal-orbit, .ticker-card { position:absolute; border:1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.035)); backdrop-filter: blur(20px); box-shadow: 0 32px 100px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.12); }
+    .dashboard { inset: 8% 0 auto 10%; height: 360px; border-radius: 34px; padding: 18px; transform: rotateX(8deg) rotateY(-14deg) rotateZ(2deg); }
+    .dash-top { display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; }
+    .pill { font-family:'JetBrains Mono', monospace; font-size: 11px; color: var(--lime); border:1px solid rgba(114,242,161,.25); background: rgba(114,242,161,.08); border-radius:999px; padding: 7px 9px; }
+    .dotrow { display:flex; gap: 7px; } .dot { width:9px; height:9px; border-radius:50%; background: var(--dim); } .dot:nth-child(1){background:var(--hot)} .dot:nth-child(2){background:var(--gold)} .dot:nth-child(3){background:var(--lime)}
+    .bars { display:grid; gap: 11px; }
+    .bar { height: 54px; border-radius: 16px; border:1px solid rgba(255,255,255,.09); background: rgba(0,0,0,.22); padding: 10px 12px; overflow:hidden; }
+    .bar span { display:block; font-size: 12px; color: var(--muted); margin-bottom: 9px; }
+    .fill { height: 8px; width: var(--w); border-radius:999px; background: linear-gradient(90deg, var(--gold), var(--hot), var(--cyan)); box-shadow: 0 0 30px rgba(255,189,85,.22); animation: pulsebar 3.8s ease-in-out infinite; }
+    .phone { right: 4%; bottom: 7%; width: 210px; height: 380px; border-radius: 38px; padding: 18px; transform: rotateZ(9deg); }
+    .phone-screen { height:100%; border-radius: 27px; background: #080a10; border:1px solid rgba(255,255,255,.08); padding: 16px; display:flex; flex-direction:column; gap: 10px; }
+    .post { border-radius: 16px; padding: 12px; background: rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.08); }
+    .post-img { height: 72px; border-radius: 13px; background: linear-gradient(135deg, rgba(255,189,85,.95), rgba(255,79,136,.75), rgba(88,231,255,.62)); margin-bottom: 9px; }
+    .post-lines i { display:block; height: 7px; background: rgba(255,255,255,.18); border-radius:999px; margin: 6px 0; }
+    .signal-orbit { left: 0; bottom: 17%; width: 190px; height: 190px; border-radius: 50%; display:grid; place-items:center; animation: spin 15s linear infinite; }
+    .signal-orbit::before { content:"SIGNAL"; font-family:'JetBrains Mono', monospace; font-size: 13px; letter-spacing:.18em; color: var(--gold); }
+    .signal-orbit::after { content:""; position:absolute; inset: 36px; border-radius:50%; border: 1px dashed rgba(255,255,255,.25); }
+    .ticker-card { left: 4%; bottom: 2%; width: 320px; border-radius: 22px; padding: 16px; font-size: 13px; color: var(--soft); }
+    .ticker-card b { color: var(--ink); }
+
+    .marquee { position: relative; z-index:2; border-block: 1px solid rgba(255,255,255,.09); overflow:hidden; background: rgba(255,255,255,.035); }
+    .marquee-track { display:flex; gap: 38px; width: max-content; padding: 16px 0; animation: marquee 28s linear infinite; font-family:'JetBrains Mono', monospace; font-size: 12px; color: var(--soft); letter-spacing:.1em; text-transform:uppercase; }
+    .marquee-track span::before { content:"✦"; color: var(--gold); margin-right: 38px; }
+
+    .section { padding: 112px 0; position:relative; }
+    .section.alt { background: linear-gradient(180deg, transparent, rgba(255,255,255,.035), transparent); border-block: 1px solid rgba(255,255,255,.07); }
+    .kicker { font-family:'JetBrains Mono', monospace; color: var(--gold); font-size: 12px; letter-spacing:.16em; text-transform:uppercase; }
+    h2 { font-size: clamp(38px, 6vw, 76px); line-height: .95; letter-spacing: -.07em; margin: 14px 0 18px; max-width: 940px; text-wrap: balance; }
+    .muted { color: var(--muted); font-size: 17px; line-height: 1.68; max-width: 760px; }
+
+    .split { display:grid; grid-template-columns: .82fr 1.18fr; gap: 48px; align-items:start; }
+    .sticky { position: sticky; top: 116px; }
+    .cards { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { border:1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035)); padding: 24px; min-height: 246px; position:relative; overflow:hidden; transition: transform .22s ease, border-color .22s ease, background .22s ease; }
+    .card::before { content:""; position:absolute; inset: -1px; background: radial-gradient(circle at 20% 0%, rgba(255,189,85,.18), transparent 16rem); opacity:0; transition:opacity .25s ease; pointer-events:none; }
+    .card:hover { transform: translateY(-7px); border-color: rgba(255,189,85,.33); background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045)); }
+    .card:hover::before { opacity:1; }
+    .card small { position:relative; z-index:1; font-family:'JetBrains Mono', monospace; color: var(--cyan); letter-spacing:.13em; text-transform:uppercase; }
+    .card h3 { position:relative; z-index:1; margin: 16px 0 11px; font-size: 26px; line-height:1.05; letter-spacing:-.04em; }
+    .card p, .card ul { position:relative; z-index:1; color: var(--soft); line-height:1.58; margin:0; }
+    .card ul { margin-top: 16px; padding-left: 19px; }
+
+    .noise-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+    .noise { border:1px solid var(--line); border-radius: 24px; background: rgba(0,0,0,.22); padding: 24px; min-height: 210px; }
+    .noise b { color: var(--hot); }
+    .noise h3 { margin:0 0 10px; font-size: 23px; letter-spacing:-.035em; }
+    .noise p { color: var(--muted); line-height:1.6; margin:0; }
+
+    .process { display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 38px; }
+    .step { border:1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); padding: 20px; min-height: 235px; }
+    .num { width:34px; height:34px; border-radius: 11px; display:grid; place-items:center; color:#140f06; background: var(--gold); font-weight:900; margin-bottom: 18px; }
+    .step h3 { margin:0 0 10px; font-size: 21px; letter-spacing:-.035em; }
+    .step p { margin:0; color: var(--muted); line-height:1.55; }
+
+    .quote { border:1px solid rgba(255,189,85,.28); border-radius: 36px; background: radial-gradient(circle at 15% 0%, rgba(255,189,85,.16), transparent 30rem), linear-gradient(135deg, rgba(255,255,255,.095), rgba(255,255,255,.035)); padding: clamp(30px, 5vw, 58px); box-shadow: 0 28px 100px rgba(0,0,0,.3); }
+    .quote p { margin:0; font-size: clamp(32px, 5.2vw, 72px); line-height:.98; letter-spacing:-.075em; max-width: 1000px; }
+    .quote span { display:block; margin-top:22px; color: var(--muted); line-height:1.6; max-width: 760px; }
+
+    .offer-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+    .offer { border:1px solid var(--line); border-radius: 26px; padding: 26px; background: rgba(255,255,255,.055); }
+    .offer .tag { display:inline-flex; border:1px solid rgba(255,255,255,.15); border-radius:999px; padding:7px 10px; font-family:'JetBrains Mono', monospace; font-size:11px; color: var(--gold); margin-bottom: 18px; }
+    .offer h3 { margin:0 0 12px; font-size: 28px; letter-spacing:-.045em; }
+    .offer p { margin:0; color: var(--soft); line-height:1.6; }
+
+    footer { position:relative; z-index:2; border-top:1px solid var(--line); padding: 42px 0; color: var(--dim); font-size: 13px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .family-link { color: var(--dim); text-decoration:none; }
+    .family-link:hover { color: var(--soft); }
+
+    @keyframes shine { 0%,100% { background-position:0% center; } 50% { background-position:100% center; } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes pulsebar { 0%,100% { transform: scaleX(.75); transform-origin:left; } 50% { transform: scaleX(1); transform-origin:left; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition: none !important; }
+      .spotlight { display:none; }
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero-machine { min-height: 520px; }
+      .dashboard { left: 0; }
+      .sticky { position: relative; top: 0; }
+      .noise-grid, .process, .offer-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .links a:not(.nav-cta) { display:none; }
+      h1 { font-size: clamp(52px, 16vw, 74px); }
+      .hero { padding-top: 112px; }
+      .hero-machine { min-height: 460px; }
+      .dashboard { height: 310px; inset: 8% 0 auto 0; }
+      .phone { width: 170px; height: 320px; right: 0; }
+      .signal-orbit { width: 145px; height: 145px; }
+      .ticker-card { width: 260px; left: 0; }
+      .cards { grid-template-columns: 1fr; }
+      .section { padding: 86px 0; }
     }
   </style>
 </head>
 <body>
   <div class="grain"></div>
+  <div class="spotlight" aria-hidden="true"></div>
   <nav>
     <div class="nav-inner">
-      <a class="brand" href="#top"><span class="mark"></span><span>Mainframe Studio</span></a>
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Mainframe Studio</span></a>
       <div class="links">
-        <a href="#problem">Problem</a>
+        <a href="#signal">Signal</a>
         <a href="#services">Services</a>
-        <a href="#system">System</a>
-        <a href="#offer">Offer</a>
-        <a class="nav-cta" href="mailto:john@mainframestud.io?subject=Mainframe%20Studio%20intake">Start with signal</a>
+        <a href="#process">Process</a>
+        <a class="nav-cta" href="mailto:john@mainframestud.io?subject=Mainframe%20Studio%20intake">Start</a>
       </div>
     </div>
   </nav>
@@ -145,79 +206,88 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">The frame you show the world</div>
-          <h1>Cut through the noise. Showcase the signal.</h1>
-          <p class="lead">Mainframe Studio gives businesses a clearer public voice and a cleaner internal workflow — social media, content capture, digital assets, marketing, advertising, CRM, and client communication tied into one operating system.</p>
+          <div class="eyebrow">Growth studio · content system · client communication</div>
+          <h1>Showcase the <span class="gradient-text">signal</span>.</h1>
+          <p class="lead">Mainframe Studio helps businesses look sharper, respond faster, and turn scattered content, leads, files, and follow-up into one clear growth system.</p>
           <div class="actions">
-            <a class="button primary" href="#services">What Mainframe does</a>
-            <a class="button" href="#problem">Why it exists</a>
+            <a class="button primary" href="#services">See what we build</a>
+            <a class="button" href="#signal">Cut through the noise</a>
           </div>
         </div>
-
-        <div class="signal-card" aria-label="Mainframe Studio signal system">
-          <div class="studio-frame"></div>
-          <div class="signal-line"></div>
-          <div class="core"><div>MAINFRAME<br/>SIGNAL SYSTEM</div></div>
-          <div class="node n1"><strong>Content Capture</strong><span>Photos, video, voice, offers, proof, raw material.</span></div>
-          <div class="node n2"><strong>Asset Library</strong><span>Organized files your team can actually find and use.</span></div>
-          <div class="node n3"><strong>Human Voice</strong><span>Strategy, captions, correspondence, tone, trust.</span></div>
-          <div class="node n4"><strong>Growth Loop</strong><span>Social, ads, CRM, intake, reporting, follow-up.</span></div>
+        <div class="hero-machine" aria-label="Mainframe Studio dynamic growth system">
+          <div class="dashboard">
+            <div class="dash-top"><div class="pill">LIVE SIGNAL SYSTEM</div><div class="dotrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+            <div class="bars">
+              <div class="bar"><span>content capture → publish-ready assets</span><div class="fill" style="--w: 88%"></div></div>
+              <div class="bar"><span>DMs + forms → CRM follow-up</span><div class="fill" style="--w: 73%"></div></div>
+              <div class="bar"><span>brand voice → captions + campaigns</span><div class="fill" style="--w: 94%"></div></div>
+              <div class="bar"><span>strategy → weekly operating loop</span><div class="fill" style="--w: 81%"></div></div>
+            </div>
+          </div>
+          <div class="phone"><div class="phone-screen"><div class="post"><div class="post-img"></div><div class="post-lines"><i style="width:90%"></i><i style="width:74%"></i><i style="width:52%"></i></div></div><div class="post"><div class="post-lines"><i style="width:78%"></i><i style="width:64%"></i><i style="width:84%"></i></div></div></div></div>
+          <div class="signal-orbit"></div>
+          <div class="ticker-card"><b>Noise in:</b> random photos, old menus, missed leads, scattered DMs.<br><b>Signal out:</b> campaigns, CRM, content, replies, proof, next actions.</div>
         </div>
       </div>
     </section>
 
-    <section id="problem" class="section alt">
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>social media management</span><span>digital asset organization</span><span>content capture</span><span>marketing + advertising</span><span>CRM follow-up</span><span>client correspondence</span><span>strategy consulting</span><span>human voice</span><span>social media management</span><span>digital asset organization</span><span>content capture</span><span>marketing + advertising</span><span>CRM follow-up</span><span>client correspondence</span><span>strategy consulting</span><span>human voice</span></div></div>
+
+    <section id="signal" class="section alt">
       <div class="wrap">
-        <div class="kicker">Why Mainframe exists</div>
-        <h2>Most social media help stops exactly where the real business starts.</h2>
-        <p class="muted">The problem usually is not just “we need more posts.” The problem is that the person posting does not understand the business, the client correspondence, the daily operations, or the strategy underneath the brand.</p>
-        <div class="problem-grid">
-          <article class="problem"><h3><b>Unresponsive</b> partners</h3><p>You should not have to chase the person responsible for making your business look alive.</p></article>
-          <article class="problem"><h3>Content with no context</h3><p>Pretty posts do not help if they miss the offer, the customer, the margin, or the actual business problem.</p></article>
-          <article class="problem"><h3>No operational follow-through</h3><p>Leads, DMs, emails, files, calendars, and decisions need a system — not another disconnected vendor.</p></article>
+        <div class="kicker">Why it exists</div>
+        <h2>Most marketing help adds another tab to manage.</h2>
+        <p class="muted">Mainframe is for owners who do not need another disconnected poster. They need a studio that understands the real business, organizes the raw material, and helps communication turn into booked work.</p>
+        <div class="noise-grid">
+          <article class="noise"><h3><b>Noise:</b> content with no context</h3><p>Pretty posts do not help if they miss the offer, the margin, the customer, or what is actually happening this week.</p></article>
+          <article class="noise"><h3><b>Noise:</b> scattered files and leads</h3><p>Photos, menus, videos, DMs, forms, and client notes need a home that both people and systems can use.</p></article>
+          <article class="noise"><h3><b>Noise:</b> no follow-through</h3><p>Attention should become next steps: replies, CRM updates, quote requests, bookings, recaps, and cleaner decisions.</p></article>
         </div>
       </div>
     </section>
 
     <section id="services" class="section">
-      <div class="wrap">
-        <div class="kicker">What Mainframe does</div>
-        <h2>A growth studio built like an operating system.</h2>
-        <p class="muted">Mainframe is not just a posting service. It is the public-facing frame for your business, backed by the systems required to make communication, content, and follow-up easier.</p>
-        <div class="services">
-          <article class="service"><small>01 / Social</small><h3>Social media management with a real business voice</h3><p>We help your business sound like itself: human, specific, timely, and connected to what is actually happening.</p><ul><li>content calendars</li><li>caption strategy</li><li>community/client correspondence support</li></ul></article>
-          <article class="service"><small>02 / Assets</small><h3>Digital asset organization</h3><p>Your photos, menus, videos, logos, offers, and source files become a usable library instead of a buried folder.</p><ul><li>Drive structure</li><li>naming and tagging</li><li>approved-use libraries</li></ul></article>
-          <article class="service"><small>03 / Capture</small><h3>Content capture and campaign material</h3><p>We turn real business activity into usable raw material for websites, ads, social, email, and sales follow-up.</p><ul><li>shot lists</li><li>photo/video priorities</li><li>offer and proof capture</li></ul></article>
-          <article class="service"><small>04 / Growth</small><h3>Marketing, advertising, CRM, and follow-up</h3><p>The front-end message connects to intake and follow-up, so attention has somewhere to go.</p><ul><li>landing pages</li><li>ad/message testing</li><li>CRM and lead routing</li></ul></article>
+      <div class="wrap split">
+        <div class="sticky">
+          <div class="kicker">What we do</div>
+          <h2>A creative studio built like an operating loop.</h2>
+          <p class="muted">Mainframe connects the public face of the business to the practical system behind it — without making the brand sound robotic.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><small>01 / Social</small><h3>Social media with a real business voice</h3><p>Content calendars, captions, campaign ideas, community replies, and posts that sound like the company — not a template.</p><ul><li>planning rhythm</li><li>caption strategy</li><li>DM/comment triage support</li></ul></article>
+          <article class="card"><small>02 / Assets</small><h3>Digital asset organization</h3><p>Photos, menus, logos, videos, offers, and source files become a usable library instead of a buried folder.</p><ul><li>Drive structure</li><li>approved-use libraries</li><li>campaign-ready sorting</li></ul></article>
+          <article class="card"><small>03 / Capture</small><h3>Content capture that knows the goal</h3><p>Shot lists and capture priorities built around offers, proof, people, events, products, and the moments clients actually trust.</p><ul><li>photo/video direction</li><li>campaign raw material</li><li>proof gathering</li></ul></article>
+          <article class="card"><small>04 / Growth</small><h3>Marketing, CRM, and follow-up</h3><p>Landing pages, ads, intake forms, lead routing, CRM hygiene, and client correspondence tied into one practical loop.</p><ul><li>lead capture</li><li>client correspondence</li><li>weekly operating visibility</li></ul></article>
         </div>
       </div>
     </section>
 
-    <section id="system" class="section alt">
+    <section id="process" class="section alt">
       <div class="wrap">
         <div class="kicker">How it works</div>
-        <h2>Strategy first. Content second. Automation where it makes life easier.</h2>
-        <div class="flow">
-          <p class="muted">Mainframe sits inside a broader Bel Air Intel operating system when a client needs it: clearer communication, organized assets, CRM visibility, internal handoffs, dashboards, and agent-assisted workflows. The goal is simple: make the business easier to run and easier to understand from the outside.</p>
-          <div class="steps">
-            <div class="step"><div class="num">1</div><div><strong>Find the signal</strong><span>Clarify the offer, customer, voice, proof, and business priorities.</span></div></div>
-            <div class="step"><div class="num">2</div><div><strong>Build the frame</strong><span>Website, social, assets, CRM, and communication surfaces start lining up.</span></div></div>
-            <div class="step"><div class="num">3</div><div><strong>Run the loop</strong><span>Capture, publish, respond, learn, and improve without making the owner chase every detail.</span></div></div>
-            <div class="step"><div class="num">4</div><div><strong>Automate carefully</strong><span>Use technology for organization, reminders, routing, drafting, and reporting — not to erase the human voice.</span></div></div>
-          </div>
+        <h2>Strategy first. Content second. Automation where it reduces friction.</h2>
+        <div class="process">
+          <article class="step"><div class="num">1</div><h3>Find the signal</h3><p>Clarify the offer, audience, voice, proof, and current business priorities.</p></article>
+          <article class="step"><div class="num">2</div><h3>Build the frame</h3><p>Organize the assets, message, website sections, social channels, and intake path.</p></article>
+          <article class="step"><div class="num">3</div><h3>Run the loop</h3><p>Capture, publish, respond, route leads, and keep a practical rhythm.</p></article>
+          <article class="step"><div class="num">4</div><h3>Make it easier</h3><p>Use systems and automation for reminders, routing, drafting, reporting, and clean handoffs.</p></article>
         </div>
-        <div class="quote"><p>“The frame your business shows the world — connected to the system that helps it grow.”</p></div>
       </div>
     </section>
 
-    <section id="offer" class="section">
+    <section class="section">
       <div class="wrap">
-        <div class="kicker">Simple starting points</div>
-        <h2>Start with the part of the business that is loudest, messiest, or most valuable.</h2>
+        <div class="quote"><p>The frame your business shows the world — connected to the system that helps it grow.</p><span>Mainframe Studio is the public-facing growth layer: sharp enough for clients to trust, organized enough for operators to use, and human enough to feel like the business itself.</span></div>
+      </div>
+    </section>
+
+    <section id="offer" class="section alt">
+      <div class="wrap">
+        <div class="kicker">Starting points</div>
+        <h2>Start with the part that is loudest, messiest, or most valuable.</h2>
         <div class="offer-grid">
-          <article class="proof"><span class="tag">Starter</span><h3>Signal Audit</h3><p>We review your public presence, content library, customer path, and communication gaps. You leave with a practical punch list.</p></article>
-          <article class="proof"><span class="tag">Build</span><h3>Content + Asset System</h3><p>We organize the raw materials and build the publishing rhythm: social, site sections, offers, proof, and approval flow.</p></article>
-          <article class="proof"><span class="tag">Operate</span><h3>Growth Framework</h3><p>We connect content, CRM, ads, client correspondence, reporting, and strategy into a repeatable operating loop.</p></article>
+          <article class="offer"><span class="tag">SIGNAL AUDIT</span><h3>Public presence + workflow review</h3><p>We review the website, social, assets, lead path, correspondence gaps, and content opportunities. You leave with the punch list.</p></article>
+          <article class="offer"><span class="tag">GROWTH SYSTEM</span><h3>Content, CRM, campaigns, and follow-up</h3><p>We help build the operating rhythm: capture, organize, publish, respond, route, and improve — without adding noise.</p></article>
         </div>
       </div>
     </section>
@@ -225,9 +295,31 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <div>Mainframe Studio — cutting through the noise and showcasing the signal.</div>
-      <div>Integrated with Bel Air Intel operating infrastructure.</div>
+      <div>Mainframe Studio — cut through the noise, showcase the signal.</div>
+      <div><a class="family-link" href="/venture-demo/">Kyburz Venture Demo Lab</a></div>
     </div>
   </footer>
+
+  <script>
+    const root = document.documentElement;
+    window.addEventListener('pointermove', (event) => {
+      root.style.setProperty('--x', event.clientX + 'px');
+      root.style.setProperty('--y', event.clientY + 'px');
+    }, { passive: true });
+
+    const cards = document.querySelectorAll('.card, .offer, .noise, .step');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.animate([
+            { opacity: 0, transform: 'translateY(18px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ], { duration: 520, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'both' });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .18 });
+    cards.forEach((card) => observer.observe(card));
+  </script>
 </body>
 </html>
