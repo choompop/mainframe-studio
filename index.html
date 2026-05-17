@@ -3,148 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mainframe Studio — Operating infrastructure for Main Street businesses</title>
-  <meta name="description" content="Mainframe Studio builds the operating system behind modern small businesses: websites, intake, storage, agents, dashboards, content, and workflows." />
+  <title>Mainframe Studio — Showcase the signal</title>
+  <meta name="description" content="Mainframe Studio helps businesses look sharper, respond faster, and turn content, clients, assets, CRM, and follow-up into one growth system." />
+  <meta property="og:title" content="Mainframe Studio — Showcase the signal" />
+  <meta property="og:description" content="A dynamic growth studio for social media, content capture, digital assets, CRM, client correspondence, and strategy." />
+  <meta name="theme-color" content="#08090d" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #050608;
-      --bg2: #090b10;
-      --panel: rgba(255,255,255,.045);
-      --panel2: rgba(255,255,255,.075);
-      --ink: #f6f3ea;
-      --muted: #a9adba;
-      --dim: #656b78;
-      --line: rgba(255,255,255,.095);
-      --blue: #5b7cfa;
-      --violet: #8b5cf6;
-      --green: #23d18b;
-      --copper: #c58b5c;
-      --danger: #ff6b6b;
-      --radius: 22px;
+      --bg: #06070a;
+      --bg-2: #0c1018;
+      --ink: #fff8ea;
+      --soft: #cfd3dd;
+      --muted: #8f98aa;
+      --dim: #596173;
+      --line: rgba(255,255,255,.12);
+      --panel: rgba(255,255,255,.07);
+      --panel-2: rgba(255,255,255,.11);
+      --gold: #ffbd55;
+      --hot: #ff4f88;
+      --cyan: #58e7ff;
+      --lime: #72f2a1;
+      --violet: #9a7cff;
+      --paper: #fff3d6;
       --max: 1180px;
+      --radius: 28px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 18% 8%, rgba(91,124,250,.18), transparent 32rem),
-        radial-gradient(circle at 78% 18%, rgba(139,92,246,.14), transparent 28rem),
-        radial-gradient(circle at 50% 100%, rgba(35,209,139,.08), transparent 34rem),
-        var(--bg);
       color: var(--ink);
       font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
-      font-feature-settings: "cv01", "ss03";
+      background:
+        radial-gradient(circle at 12% 8%, rgba(255,189,85,.22), transparent 30rem),
+        radial-gradient(circle at 88% 6%, rgba(88,231,255,.18), transparent 30rem),
+        radial-gradient(circle at 70% 78%, rgba(255,79,136,.13), transparent 34rem),
+        linear-gradient(180deg, #06070a 0%, #070912 44%, #050608 100%);
       overflow-x: hidden;
     }
 
-    .grain {
-      position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: .12;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 260 260' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
-      mix-blend-mode: overlay;
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at 50% 0%, black 0%, transparent 72%);
     }
 
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 40;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(5,6,8,.86), rgba(5,6,8,.42));
-      border-bottom: 1px solid rgba(255,255,255,.06);
+    .grain { position: fixed; inset: 0; pointer-events:none; z-index: 80; opacity: .11; mix-blend-mode: overlay; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 280 280' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.74' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E"); }
+    .spotlight { position: fixed; inset: auto auto 0 0; width: 420px; height: 420px; border-radius: 999px; pointer-events:none; z-index: 1; transform: translate(calc(var(--x, 50vw) - 210px), calc(var(--y, 50vh) - 210px)); background: radial-gradient(circle, rgba(255,189,85,.12), transparent 62%); filter: blur(4px); transition: transform .12s linear; }
+
+    a { color: inherit; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; position: relative; z-index: 2; }
+
+    nav { position: fixed; inset: 0 0 auto; z-index: 70; border-bottom: 1px solid rgba(255,255,255,.08); background: linear-gradient(to bottom, rgba(6,7,10,.86), rgba(6,7,10,.54)); backdrop-filter: blur(20px); }
+    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 15px 22px; display:flex; justify-content:space-between; align-items:center; gap: 18px; }
+    .brand { display:flex; gap: 12px; align-items:center; text-decoration:none; font-weight: 800; letter-spacing: -.04em; }
+    .mark { width: 32px; height: 32px; border-radius: 11px; position: relative; border:1px solid rgba(255,255,255,.16); background: conic-gradient(from 140deg, var(--gold), var(--hot), var(--cyan), var(--gold)); box-shadow: 0 0 36px rgba(255,189,85,.2); }
+    .mark::after { content:""; position:absolute; inset: 7px; border-radius: 6px; background:#07080d; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); }
+    .links { display:flex; align-items:center; gap: 20px; font-size: 13px; color: var(--soft); }
+    .links a { text-decoration:none; transition: color .2s ease, transform .2s ease; }
+    .links a:hover { color: var(--ink); transform: translateY(-1px); }
+    .nav-cta { color:#130d05 !important; background: var(--paper); padding: 9px 14px; border-radius: 999px; font-weight: 800; box-shadow: 0 16px 45px rgba(255,189,85,.2); }
+
+    .hero { min-height: 100vh; display:grid; align-items:center; padding: 132px 0 80px; }
+    .hero-grid { display:grid; grid-template-columns: minmax(0, 1fr) minmax(360px, .82fr); gap: 50px; align-items:center; }
+    .eyebrow { font-family:'JetBrains Mono', monospace; color: var(--gold); font-size: 12px; letter-spacing: .18em; text-transform:uppercase; margin-bottom: 18px; }
+    h1 { font-size: clamp(56px, 9vw, 116px); line-height: .86; letter-spacing: -.085em; margin: 0 0 26px; font-weight: 800; text-wrap: balance; }
+    .gradient-text { background: linear-gradient(100deg, #fff8ea 0%, #ffbd55 35%, #58e7ff 72%, #fff8ea 100%); -webkit-background-clip:text; color: transparent; background-size: 200% auto; animation: shine 8s ease-in-out infinite; }
+    .lead { color: #d7dbe5; font-size: clamp(18px, 2vw, 23px); line-height: 1.55; max-width: 740px; margin: 0 0 34px; }
+    .actions { display:flex; gap: 12px; flex-wrap:wrap; }
+    .button { min-height: 48px; display:inline-flex; align-items:center; justify-content:center; gap: 10px; padding: 13px 18px; border:1px solid var(--line); border-radius:999px; text-decoration:none; font-weight: 800; font-size: 14px; background: rgba(255,255,255,.06); transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+    .button:hover { transform: translateY(-2px); background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.24); }
+    .button.primary { color:#130d05; background: linear-gradient(135deg, #fff3d6, #ffbd55); border-color: rgba(255,255,255,.35); box-shadow: 0 20px 55px rgba(255,189,85,.22); }
+
+    .hero-machine { min-height: 630px; position:relative; perspective: 1100px; }
+    .phone, .dashboard, .signal-orbit, .ticker-card { position:absolute; border:1px solid var(--line); background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.035)); backdrop-filter: blur(20px); box-shadow: 0 32px 100px rgba(0,0,0,.42), inset 0 1px rgba(255,255,255,.12); }
+    .dashboard { inset: 8% 0 auto 10%; height: 360px; border-radius: 34px; padding: 18px; transform: rotateX(8deg) rotateY(-14deg) rotateZ(2deg); }
+    .dash-top { display:flex; justify-content:space-between; align-items:center; margin-bottom: 16px; }
+    .pill { font-family:'JetBrains Mono', monospace; font-size: 11px; color: var(--lime); border:1px solid rgba(114,242,161,.25); background: rgba(114,242,161,.08); border-radius:999px; padding: 7px 9px; }
+    .dotrow { display:flex; gap: 7px; } .dot { width:9px; height:9px; border-radius:50%; background: var(--dim); } .dot:nth-child(1){background:var(--hot)} .dot:nth-child(2){background:var(--gold)} .dot:nth-child(3){background:var(--lime)}
+    .bars { display:grid; gap: 11px; }
+    .bar { height: 54px; border-radius: 16px; border:1px solid rgba(255,255,255,.09); background: rgba(0,0,0,.22); padding: 10px 12px; overflow:hidden; }
+    .bar span { display:block; font-size: 12px; color: var(--muted); margin-bottom: 9px; }
+    .fill { height: 8px; width: var(--w); border-radius:999px; background: linear-gradient(90deg, var(--gold), var(--hot), var(--cyan)); box-shadow: 0 0 30px rgba(255,189,85,.22); animation: pulsebar 3.8s ease-in-out infinite; }
+    .phone { right: 4%; bottom: 7%; width: 210px; height: 380px; border-radius: 38px; padding: 18px; transform: rotateZ(9deg); }
+    .phone-screen { height:100%; border-radius: 27px; background: #080a10; border:1px solid rgba(255,255,255,.08); padding: 16px; display:flex; flex-direction:column; gap: 10px; }
+    .post { border-radius: 16px; padding: 12px; background: rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.08); }
+    .post-img { height: 72px; border-radius: 13px; background: linear-gradient(135deg, rgba(255,189,85,.95), rgba(255,79,136,.75), rgba(88,231,255,.62)); margin-bottom: 9px; }
+    .post-lines i { display:block; height: 7px; background: rgba(255,255,255,.18); border-radius:999px; margin: 6px 0; }
+    .signal-orbit { left: 0; bottom: 17%; width: 190px; height: 190px; border-radius: 50%; display:grid; place-items:center; animation: spin 15s linear infinite; }
+    .signal-orbit::before { content:"SIGNAL"; font-family:'JetBrains Mono', monospace; font-size: 13px; letter-spacing:.18em; color: var(--gold); }
+    .signal-orbit::after { content:""; position:absolute; inset: 36px; border-radius:50%; border: 1px dashed rgba(255,255,255,.25); }
+    .ticker-card { left: 4%; bottom: 2%; width: 320px; border-radius: 22px; padding: 16px; font-size: 13px; color: var(--soft); }
+    .ticker-card b { color: var(--ink); }
+
+    .marquee { position: relative; z-index:2; border-block: 1px solid rgba(255,255,255,.09); overflow:hidden; background: rgba(255,255,255,.035); }
+    .marquee-track { display:flex; gap: 38px; width: max-content; padding: 16px 0; animation: marquee 28s linear infinite; font-family:'JetBrains Mono', monospace; font-size: 12px; color: var(--soft); letter-spacing:.1em; text-transform:uppercase; }
+    .marquee-track span::before { content:"✦"; color: var(--gold); margin-right: 38px; }
+
+    .section { padding: 112px 0; position:relative; }
+    .section.alt { background: linear-gradient(180deg, transparent, rgba(255,255,255,.035), transparent); border-block: 1px solid rgba(255,255,255,.07); }
+    .kicker { font-family:'JetBrains Mono', monospace; color: var(--gold); font-size: 12px; letter-spacing:.16em; text-transform:uppercase; }
+    h2 { font-size: clamp(38px, 6vw, 76px); line-height: .95; letter-spacing: -.07em; margin: 14px 0 18px; max-width: 940px; text-wrap: balance; }
+    .muted { color: var(--muted); font-size: 17px; line-height: 1.68; max-width: 760px; }
+
+    .split { display:grid; grid-template-columns: .82fr 1.18fr; gap: 48px; align-items:start; }
+    .sticky { position: sticky; top: 116px; }
+    .cards { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { border:1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(255,255,255,.09), rgba(255,255,255,.035)); padding: 24px; min-height: 246px; position:relative; overflow:hidden; transition: transform .22s ease, border-color .22s ease, background .22s ease; }
+    .card::before { content:""; position:absolute; inset: -1px; background: radial-gradient(circle at 20% 0%, rgba(255,189,85,.18), transparent 16rem); opacity:0; transition:opacity .25s ease; pointer-events:none; }
+    .card:hover { transform: translateY(-7px); border-color: rgba(255,189,85,.33); background: linear-gradient(145deg, rgba(255,255,255,.12), rgba(255,255,255,.045)); }
+    .card:hover::before { opacity:1; }
+    .card small { position:relative; z-index:1; font-family:'JetBrains Mono', monospace; color: var(--cyan); letter-spacing:.13em; text-transform:uppercase; }
+    .card h3 { position:relative; z-index:1; margin: 16px 0 11px; font-size: 26px; line-height:1.05; letter-spacing:-.04em; }
+    .card p, .card ul { position:relative; z-index:1; color: var(--soft); line-height:1.58; margin:0; }
+    .card ul { margin-top: 16px; padding-left: 19px; }
+
+    .noise-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 36px; }
+    .noise { border:1px solid var(--line); border-radius: 24px; background: rgba(0,0,0,.22); padding: 24px; min-height: 210px; }
+    .noise b { color: var(--hot); }
+    .noise h3 { margin:0 0 10px; font-size: 23px; letter-spacing:-.035em; }
+    .noise p { color: var(--muted); line-height:1.6; margin:0; }
+
+    .process { display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 38px; }
+    .step { border:1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.055); padding: 20px; min-height: 235px; }
+    .num { width:34px; height:34px; border-radius: 11px; display:grid; place-items:center; color:#140f06; background: var(--gold); font-weight:900; margin-bottom: 18px; }
+    .step h3 { margin:0 0 10px; font-size: 21px; letter-spacing:-.035em; }
+    .step p { margin:0; color: var(--muted); line-height:1.55; }
+
+    .quote { border:1px solid rgba(255,189,85,.28); border-radius: 36px; background: radial-gradient(circle at 15% 0%, rgba(255,189,85,.16), transparent 30rem), linear-gradient(135deg, rgba(255,255,255,.095), rgba(255,255,255,.035)); padding: clamp(30px, 5vw, 58px); box-shadow: 0 28px 100px rgba(0,0,0,.3); }
+    .quote p { margin:0; font-size: clamp(32px, 5.2vw, 72px); line-height:.98; letter-spacing:-.075em; max-width: 1000px; }
+    .quote span { display:block; margin-top:22px; color: var(--muted); line-height:1.6; max-width: 760px; }
+
+    .offer-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+    .offer { border:1px solid var(--line); border-radius: 26px; padding: 26px; background: rgba(255,255,255,.055); }
+    .offer .tag { display:inline-flex; border:1px solid rgba(255,255,255,.15); border-radius:999px; padding:7px 10px; font-family:'JetBrains Mono', monospace; font-size:11px; color: var(--gold); margin-bottom: 18px; }
+    .offer h3 { margin:0 0 12px; font-size: 28px; letter-spacing:-.045em; }
+    .offer p { margin:0; color: var(--soft); line-height:1.6; }
+
+    footer { position:relative; z-index:2; border-top:1px solid var(--line); padding: 42px 0; color: var(--dim); font-size: 13px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+    .family-link { color: var(--dim); text-decoration:none; }
+    .family-link:hover { color: var(--soft); }
+
+    @keyframes shine { 0%,100% { background-position:0% center; } 50% { background-position:100% center; } }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes pulsebar { 0%,100% { transform: scaleX(.75); transform-origin:left; } 50% { transform: scaleX(1); transform-origin:left; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition: none !important; }
+      .spotlight { display:none; }
     }
-    .nav-inner { max-width: var(--max); margin: 0 auto; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display:flex; align-items:center; gap: 11px; text-decoration:none; color: var(--ink); font-weight: 600; letter-spacing: -.02em; }
-    .mark { width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 9px; display:grid; place-items:center; background: linear-gradient(135deg, rgba(91,124,250,.24), rgba(197,139,92,.10)); box-shadow: inset 0 0 18px rgba(255,255,255,.05); }
-    .mark:before { content:""; width: 12px; height: 12px; border: 1px solid var(--green); border-radius: 4px; box-shadow: 0 0 22px rgba(35,209,139,.5); }
-    .links { display:flex; align-items:center; gap: 22px; font-size: 13px; color: var(--muted); }
-    .links a { color: inherit; text-decoration: none; }
-    .links a:hover { color: var(--ink); }
-    .cta { color: white !important; background: linear-gradient(135deg, var(--blue), var(--violet)); padding: 9px 13px; border-radius: 999px; box-shadow: 0 12px 35px rgba(91,124,250,.22); }
 
-    section { position: relative; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
-    .hero { min-height: 100vh; display:grid; align-items:center; padding: 120px 0 80px; }
-    .hero-grid { display:grid; grid-template-columns: 1.02fr .98fr; gap: 56px; align-items:center; }
-    .eyebrow { font-family: 'JetBrains Mono', monospace; color: var(--green); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
-    h1 { font-size: clamp(48px, 8vw, 94px); line-height: .92; letter-spacing: -.07em; margin: 0 0 24px; font-weight: 560; }
-    .lead { color: #c7c9d1; font-size: clamp(18px, 2vw, 23px); line-height: 1.55; max-width: 680px; margin: 0 0 34px; }
-    .hero-actions { display:flex; gap: 12px; flex-wrap: wrap; }
-    .button { display:inline-flex; align-items:center; gap: 10px; min-height: 44px; padding: 12px 16px; border-radius: 999px; text-decoration:none; color: var(--ink); border:1px solid var(--line); background: rgba(255,255,255,.045); font-weight: 500; font-size: 14px; }
-    .button.primary { background: linear-gradient(135deg, var(--blue), var(--violet)); border-color: rgba(255,255,255,.18); color: white; }
-
-    .frame-visual { min-height: 560px; position: relative; perspective: 1100px; }
-    .orbital { position:absolute; inset: 8%; border: 1px solid rgba(255,255,255,.08); border-radius: 38px; transform: rotateX(58deg) rotateZ(-38deg); background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.015)); box-shadow: inset 0 0 60px rgba(91,124,250,.06), 0 60px 100px rgba(0,0,0,.44); }
-    .node { position:absolute; border: 1px solid var(--line); border-radius: 18px; padding: 14px; background: rgba(12,14,20,.78); backdrop-filter: blur(16px); box-shadow: 0 24px 70px rgba(0,0,0,.38); }
-    .node strong { display:block; font-size: 13px; margin-bottom: 6px; }
-    .node span { color: var(--muted); font-size: 12px; line-height: 1.45; }
-    .n1 { top: 6%; left: 3%; width: 180px; }
-    .n2 { top: 26%; right: 0; width: 205px; }
-    .n3 { bottom: 18%; left: 0; width: 195px; }
-    .n4 { bottom: 2%; right: 12%; width: 185px; }
-    .core { position:absolute; top: 41%; left: 42%; width: 160px; height: 160px; transform: translate(-50%,-50%); border-radius: 40px; border: 1px solid rgba(255,255,255,.14); background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.16), transparent 38%), linear-gradient(135deg, rgba(91,124,250,.32), rgba(35,209,139,.08)); display:grid; place-items:center; box-shadow: 0 0 80px rgba(91,124,250,.22), inset 0 0 60px rgba(255,255,255,.04); }
-    .core div { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ink); text-align:center; }
-
-    .deep-scroll { background: linear-gradient(180deg, transparent, #030407 10%, #030407 88%, transparent); padding: 100px 0; }
-    .sticky-stage { display:grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items:start; }
-    .sticky-copy { position: sticky; top: 118px; padding-bottom: 80px; }
-    .kicker { color: var(--copper); font-family:'JetBrains Mono', monospace; text-transform: uppercase; font-size: 12px; letter-spacing: .08em; }
-    h2 { font-size: clamp(34px, 5vw, 64px); line-height: .98; letter-spacing: -.055em; margin: 14px 0 18px; font-weight: 540; }
-    .muted { color: var(--muted); line-height: 1.65; font-size: 17px; }
-    .layers { display:grid; gap: 28px; }
-    .layer { min-height: 360px; border:1px solid var(--line); border-radius: var(--radius); padding: 26px; background: linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.025)); box-shadow: inset 0 1px rgba(255,255,255,.08), 0 35px 90px rgba(0,0,0,.34); }
-    .layer .num { font-family:'JetBrains Mono', monospace; color: var(--green); font-size: 12px; }
-    .layer h3 { margin: 16px 0 10px; font-size: 28px; letter-spacing: -.035em; }
-    .diagram { margin-top: 24px; display:grid; gap: 10px; font-family:'JetBrains Mono', monospace; font-size: 12px; color: #d7d9df; }
-    .pipe { border:1px solid rgba(255,255,255,.09); background: rgba(0,0,0,.24); border-radius: 12px; padding: 13px; display:flex; justify-content:space-between; gap: 16px; }
-    .pipe b { color: var(--ink); font-weight: 500; }
-    .pipe em { color: var(--dim); font-style: normal; }
-
-    .brand-board { padding: 120px 0; }
-    .palette { display:grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 34px; }
-    .swatch { min-height: 180px; border-radius: 20px; padding: 16px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid rgba(255,255,255,.1); box-shadow: inset 0 1px rgba(255,255,255,.09); }
-    .swatch code { font-family:'JetBrains Mono', monospace; font-size: 12px; color: rgba(255,255,255,.72); }
-    .swatch span { font-weight: 560; letter-spacing: -.02em; }
-    .s1 { background:#050608; } .s2 { background:#f6f3ea; color:#08090a; } .s2 code { color: rgba(0,0,0,.6); } .s3 { background:#5b7cfa; } .s4 { background:#23d18b; color:#04100b; } .s4 code { color: rgba(0,0,0,.58); } .s5 { background:#c58b5c; color:#150c06; } .s5 code { color: rgba(0,0,0,.58); }
-
-    .offer { padding: 80px 0 130px; }
-    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 34px; }
-    .card { border:1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.045); padding: 24px; min-height: 250px; }
-    .card h3 { margin: 0 0 12px; font-size: 22px; letter-spacing: -.03em; }
-    .card p { color: var(--muted); line-height: 1.55; margin: 0; }
-    .card ul { margin: 18px 0 0; padding-left: 18px; color: #d0d3dc; line-height: 1.8; }
-
-    footer { border-top:1px solid var(--line); padding: 40px 0; color: var(--dim); font-size: 13px; }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--ink); }
-
-    @media (max-width: 900px) {
-      .links a:not(.cta) { display:none; }
-      .hero-grid, .sticky-stage { grid-template-columns: 1fr; }
-      .frame-visual { min-height: 460px; }
-      .sticky-copy { position: relative; top: 0; }
-      .palette, .cards { grid-template-columns: 1fr; }
-      .swatch { min-height: 120px; }
+    @media (max-width: 980px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero-machine { min-height: 520px; }
+      .dashboard { left: 0; }
+      .sticky { position: relative; top: 0; }
+      .noise-grid, .process, .offer-grid { grid-template-columns: 1fr; }
     }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .node { animation: float 7s ease-in-out infinite; }
-      .n2 { animation-delay: -1.5s; } .n3 { animation-delay: -3s; } .n4 { animation-delay: -4.5s; }
-      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @media (max-width: 720px) {
+      .links a:not(.nav-cta) { display:none; }
+      h1 { font-size: clamp(52px, 16vw, 74px); }
+      .hero { padding-top: 112px; }
+      .hero-machine { min-height: 460px; }
+      .dashboard { height: 310px; inset: 8% 0 auto 0; }
+      .phone { width: 170px; height: 320px; right: 0; }
+      .signal-orbit { width: 145px; height: 145px; }
+      .ticker-card { width: 260px; left: 0; }
+      .cards { grid-template-columns: 1fr; }
+      .section { padding: 86px 0; }
     }
   </style>
 </head>
 <body>
   <div class="grain"></div>
+  <div class="spotlight" aria-hidden="true"></div>
   <nav>
     <div class="nav-inner">
-      <a class="brand" href="#top"><span class="mark"></span><span>Mainframe Studio</span></a>
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Mainframe Studio</span></a>
       <div class="links">
-        <a href="#system">System</a>
-        <a href="#brand">Brand</a>
-        <a href="#offer">Offer</a>
-        <a class="cta" href="#offer">Build the frame</a>
+        <a href="#signal">Signal</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a class="nav-cta" href="mailto:john@mainframestud.io?subject=Mainframe%20Studio%20intake">Start</a>
       </div>
     </div>
   </nav>
@@ -153,100 +206,120 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">Operating infrastructure for Main Street businesses</div>
-          <h1>We build the frame your business runs on.</h1>
-          <p class="lead">Mainframe Studio is the public growth layer for Bel Air Intel-built client systems, connecting the public face of a business — website, content, phone, lead flow — to the internal machine: storage, Slack, agents, calendars, dashboards, finance workflows, and human operators.</p>
-          <div class="hero-actions">
-            <a class="button primary" href="#system">Travel the infrastructure</a>
-            <a class="button" href="#brand">View brand system</a>
+          <div class="eyebrow">Growth studio · content system · client communication</div>
+          <h1>Showcase the <span class="gradient-text">signal</span>.</h1>
+          <p class="lead">Mainframe Studio helps businesses look sharper, respond faster, and turn scattered content, leads, files, and follow-up into one clear growth system.</p>
+          <div class="actions">
+            <a class="button primary" href="#services">See what we build</a>
+            <a class="button" href="#signal">Cut through the noise</a>
           </div>
         </div>
-        <div class="frame-visual" aria-label="Abstract infrastructure model">
-          <div class="orbital"></div>
-          <div class="core"><div>MAINFRAME<br/>CLIENT OS</div></div>
-          <div class="node n1"><strong>External Frame</strong><span>Website, domain, content, social proof, forms, phone.</span></div>
-          <div class="node n2"><strong>Storage Layer</strong><span>Google Drive, asset taxonomy, source files, approvals.</span></div>
-          <div class="node n3"><strong>Agent Layer</strong><span>Hermes brain, Slack routing, tasks, summaries, workflows.</span></div>
-          <div class="node n4"><strong>Control Layer</strong><span>Dashboard, calendar, reporting, finance visibility.</span></div>
+        <div class="hero-machine" aria-label="Mainframe Studio dynamic growth system">
+          <div class="dashboard">
+            <div class="dash-top"><div class="pill">LIVE SIGNAL SYSTEM</div><div class="dotrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div></div>
+            <div class="bars">
+              <div class="bar"><span>content capture → publish-ready assets</span><div class="fill" style="--w: 88%"></div></div>
+              <div class="bar"><span>DMs + forms → CRM follow-up</span><div class="fill" style="--w: 73%"></div></div>
+              <div class="bar"><span>brand voice → captions + campaigns</span><div class="fill" style="--w: 94%"></div></div>
+              <div class="bar"><span>strategy → weekly operating loop</span><div class="fill" style="--w: 81%"></div></div>
+            </div>
+          </div>
+          <div class="phone"><div class="phone-screen"><div class="post"><div class="post-img"></div><div class="post-lines"><i style="width:90%"></i><i style="width:74%"></i><i style="width:52%"></i></div></div><div class="post"><div class="post-lines"><i style="width:78%"></i><i style="width:64%"></i><i style="width:84%"></i></div></div></div></div>
+          <div class="signal-orbit"></div>
+          <div class="ticker-card"><b>Noise in:</b> random photos, old menus, missed leads, scattered DMs.<br><b>Signal out:</b> campaigns, CRM, content, replies, proof, next actions.</div>
         </div>
       </div>
     </section>
 
-    <section id="system" class="deep-scroll">
-      <div class="wrap sticky-stage">
-        <div class="sticky-copy">
-          <div class="kicker">Scroll through the machine</div>
-          <h2>The website is the frame. The infrastructure is the business.</h2>
-          <p class="muted">Bel Air Intel acts as the architect and front door for client operating systems. Mainframe Studio keeps the public frame sharp: sites, content, lead capture, and growth signals that plug cleanly into the deeper layers.</p>
-        </div>
-        <div class="layers">
-          <article class="layer">
-            <div class="num">LAYER 01</div>
-            <h3>The public frame</h3>
-            <p class="muted">A polished website that makes the business legible: what you sell, how to book, where to go, what to trust, what happens next.</p>
-            <div class="diagram"><div class="pipe"><b>Domain + site</b><em>mainframestud.io</em></div><div class="pipe"><b>Forms + phone</b><em>lead capture</em></div><div class="pipe"><b>Social content</b><em>proof + distribution</em></div></div>
-          </article>
-          <article class="layer">
-            <div class="num">LAYER 02</div>
-            <h3>The storage system</h3>
-            <p class="muted">Content, docs, menus, contracts, clips, analytics, and approvals live in a clean Google Drive structure that both people and agents can understand.</p>
-            <div class="diagram"><div class="pipe"><b>Capture</b><em>photos / video / calls</em></div><div class="pipe"><b>Name + tag</b><em>usable assets</em></div><div class="pipe"><b>Retrieve</b><em>editor-ready library</em></div></div>
-          </article>
-          <article class="layer">
-            <div class="num">LAYER 03</div>
-            <h3>The agent brain</h3>
-            <p class="muted">Hermes turns calls, Slack messages, files, and client goals into tasks, drafts, reminders, summaries, and operating memory — with approval boundaries.</p>
-            <div class="diagram"><div class="pipe"><b>Slack</b><em>team interface</em></div><div class="pipe"><b>Hermes</b><em>reasoning + action</em></div><div class="pipe"><b>Dashboard</b><em>visibility + control</em></div></div>
-          </article>
-          <article class="layer">
-            <div class="num">LAYER 04</div>
-            <h3>The operating loop</h3>
-            <p class="muted">Leads become appointments. Content becomes posts. Calls become SOPs. Expenses become visibility. The business stops living in the owner’s head.</p>
-            <div class="diagram"><div class="pipe"><b>Lead</b><em>captured</em></div><div class="pipe"><b>Task</b><em>assigned</em></div><div class="pipe"><b>Report</b><em>learned</em></div></div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><span>social media management</span><span>digital asset organization</span><span>content capture</span><span>marketing + advertising</span><span>CRM follow-up</span><span>client correspondence</span><span>strategy consulting</span><span>human voice</span><span>social media management</span><span>digital asset organization</span><span>content capture</span><span>marketing + advertising</span><span>CRM follow-up</span><span>client correspondence</span><span>strategy consulting</span><span>human voice</span></div></div>
 
-    <section id="brand" class="brand-board">
+    <section id="signal" class="section alt">
       <div class="wrap">
-        <div class="kicker">Brand system</div>
-        <h2>Deep tech, warm business, social enough to feel alive.</h2>
-        <p class="muted">The palette should not look like a generic AI startup. It should feel like a dark infrastructure room with warm human material inside it.</p>
-        <div class="palette">
-          <div class="swatch s1"><span>Obsidian Mainframe</span><code>#050608</code></div>
-          <div class="swatch s2"><span>Paper Ivory</span><code>#F6F3EA</code></div>
-          <div class="swatch s3"><span>System Blue</span><code>#5B7CFA</code></div>
-          <div class="swatch s4"><span>Live Signal</span><code>#23D18B</code></div>
-          <div class="swatch s5"><span>Human Copper</span><code>#C58B5C</code></div>
+        <div class="kicker">Why it exists</div>
+        <h2>Most marketing help adds another tab to manage.</h2>
+        <p class="muted">Mainframe is for owners who do not need another disconnected poster. They need a studio that understands the real business, organizes the raw material, and helps communication turn into booked work.</p>
+        <div class="noise-grid">
+          <article class="noise"><h3><b>Noise:</b> content with no context</h3><p>Pretty posts do not help if they miss the offer, the margin, the customer, or what is actually happening this week.</p></article>
+          <article class="noise"><h3><b>Noise:</b> scattered files and leads</h3><p>Photos, menus, videos, DMs, forms, and client notes need a home that both people and systems can use.</p></article>
+          <article class="noise"><h3><b>Noise:</b> no follow-through</h3><p>Attention should become next steps: replies, CRM updates, quote requests, bookings, recaps, and cleaner decisions.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="offer" class="offer">
-      <div class="wrap">
-        <div class="kicker">How it sells</div>
-        <h2>Install once. Operate monthly.</h2>
-        <p class="muted">The clean business model is a foundation setup fee, then recurring operating tiers.</p>
+    <section id="services" class="section">
+      <div class="wrap split">
+        <div class="sticky">
+          <div class="kicker">What we do</div>
+          <h2>A creative studio built like an operating loop.</h2>
+          <p class="muted">Mainframe connects the public face of the business to the practical system behind it — with Bel Air Intel as the architect when clients need a deeper operating layer, without making the brand sound robotic.</p>
+        </div>
         <div class="cards">
-          <div class="card"><h3>Foundation Setup</h3><p>Domain, website, phone, Drive, Slack, calendar, dashboard, agent brain, intake flows, permissions.</p><ul><li>Paid in advance</li><li>Clear scope</li><li>Client isolated</li></ul></div>
-          <div class="card"><h3>Growth Operations</h3><p>Social media, content creation, editing, ads, SEO, lead follow-up, campaign reporting.</p><ul><li>Monthly retainer</li><li>Content library</li><li>Approval gates</li></ul></div>
-          <div class="card"><h3>Control Layer</h3><p>Bookkeeping visibility, calls converted to SOPs, financial workflows, strategy uploaded into the brain.</p><ul><li>Powered by Cain Union</li><li>Cashflow clarity</li><li>Owner less central</li></ul></div>
+          <article class="card"><small>01 / Social</small><h3>Social media with a real business voice</h3><p>Content calendars, captions, campaign ideas, community replies, and posts that sound like the company — not a template.</p><ul><li>planning rhythm</li><li>caption strategy</li><li>DM/comment triage support</li></ul></article>
+          <article class="card"><small>02 / Assets</small><h3>Digital asset organization</h3><p>Photos, menus, logos, videos, offers, and source files become a usable library instead of a buried folder.</p><ul><li>Drive structure</li><li>approved-use libraries</li><li>campaign-ready sorting</li></ul></article>
+          <article class="card"><small>03 / Capture</small><h3>Content capture that knows the goal</h3><p>Shot lists and capture priorities built around offers, proof, people, events, products, and the moments clients actually trust.</p><ul><li>photo/video direction</li><li>campaign raw material</li><li>proof gathering</li></ul></article>
+          <article class="card"><small>04 / Growth</small><h3>Marketing, CRM, and follow-up</h3><p>Landing pages, ads, intake forms, lead routing, CRM hygiene, and client correspondence tied into one practical loop.</p><ul><li>lead capture</li><li>client correspondence</li><li>weekly operating visibility</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="section alt">
+      <div class="wrap">
+        <div class="kicker">How it works</div>
+        <h2>Strategy first. Content second. Automation where it reduces friction.</h2>
+        <div class="process">
+          <article class="step"><div class="num">1</div><h3>Find the signal</h3><p>Clarify the offer, audience, voice, proof, and current business priorities.</p></article>
+          <article class="step"><div class="num">2</div><h3>Build the frame</h3><p>Organize the assets, message, website sections, social channels, and intake path.</p></article>
+          <article class="step"><div class="num">3</div><h3>Run the loop</h3><p>Capture, publish, respond, route leads, and keep a practical rhythm.</p></article>
+          <article class="step"><div class="num">4</div><h3>Make it easier</h3><p>Use systems and automation for reminders, routing, drafting, reporting, and clean handoffs.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="quote"><p>The frame your business shows the world — connected to the system that helps it grow.</p><span>Mainframe Studio is the public growth layer: sharp enough for clients to trust, organized enough for operators to use, and human enough to feel like the business itself.</span></div>
+      </div>
+    </section>
+
+    <section id="offer" class="section alt">
+      <div class="wrap">
+        <div class="kicker">Starting points</div>
+        <h2>Start with the part that is loudest, messiest, or most valuable.</h2>
+        <div class="offer-grid">
+          <article class="offer"><span class="tag">SIGNAL AUDIT</span><h3>Public presence + workflow review</h3><p>We review the website, social, assets, lead path, correspondence gaps, and content opportunities. You leave with the punch list.</p></article>
+          <article class="offer"><span class="tag">GROWTH SYSTEM</span><h3>Content, CRM, campaigns, and follow-up</h3><p>We help build the operating rhythm: capture, organize, publish, respond, route, and improve — without adding noise.</p></article>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap">Mainframe Studio — the public growth layer for <a href="https://belairintel.com">Bel Air Intel</a> client systems, with <a href="https://cainunion.com">Cain Union</a> financial controls when needed.</div>
+    <div class="wrap footer-inner">
+      <div>Mainframe Studio — cut through the noise, showcase the signal.</div>
+      <div>Public growth layer for <a class="family-link" href="https://belairintel.com">Bel Air Intel</a> client systems, with <a class="family-link" href="https://cainunion.com">Cain Union</a> financial controls when needed.</div>
+    </div>
   </footer>
 
   <script>
-    const visual = document.querySelector('.frame-visual');
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY || 0;
-      if (visual) visual.style.transform = `translateY(${Math.min(y * .025, 18)}px)`;
+    const root = document.documentElement;
+    window.addEventListener('pointermove', (event) => {
+      root.style.setProperty('--x', event.clientX + 'px');
+      root.style.setProperty('--y', event.clientY + 'px');
     }, { passive: true });
+
+    const cards = document.querySelectorAll('.card, .offer, .noise, .step');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.animate([
+            { opacity: 0, transform: 'translateY(18px)' },
+            { opacity: 1, transform: 'translateY(0)' }
+          ], { duration: 520, easing: 'cubic-bezier(.2,.7,.2,1)', fill: 'both' });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .18 });
+    cards.forEach((card) => observer.observe(card));
   </script>
 </body>
 </html>
